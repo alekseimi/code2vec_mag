@@ -33,6 +33,7 @@ if __name__ == '__main__':
             config.log(
                 str(eval_results).replace('topk', 'top{}'.format(config.TOP_K_WORDS_CONSIDERED_DURING_PREDICTION)))
     if config.PREDICT:
+        config.EXPORT_CODE_VECTORS = True
         predictor = InteractivePredictor(config, model)
         predictor.predict()
     model.close_session()
